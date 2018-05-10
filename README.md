@@ -1,11 +1,10 @@
 # progressive-web-app
-First Progressive App Demo.
 
 This guide will show you how to get up and running with Workbox to route common requests for a web page and demonstrate how to cache using a common strategy.
 
 Since most websites contain CSS, JavaScript and images, let’s look at how we can cache and serve these files using a service worker and Workbox.
 
-Create and Register a Service Worker File
+##############################  Create and Register a Service Worker File ############################## 
 
 Before we can use Workbox, we need to create a service worker file and register it to our website.
 
@@ -15,7 +14,6 @@ console.log('Hello from sw.js');
 
 In your web page register your new service worker file like so:
 
-<script>
 // Check that service workers are registered
 if ('serviceWorker' in navigator) {
   // Use the window load event to keep the page load performant
@@ -23,7 +21,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
   });
 }
-</script>
 
 This tells the browser this is the service worker to use for site.
 
@@ -34,7 +31,7 @@ Looking in the “Application” tab in Chrome DevTools you should see your serv
 
 Now that we have a service worker registered, let’s look at how we can use Workbox.
 
-Importing Workbox
+############################## Importing Workbox #########################################
 
 To start using Workbox you just need to import the workbox-sw.js file in your service worker.
 
@@ -53,7 +50,8 @@ With this you should see the “Yay” message so we know that Workbox is offici
 DevTools screenshot of Workbox loading in a service worker.
 
 Now we can start using Workbox.
-Using Workbox
+
+############################## Using Workbox ############################## 
 
 One of Workbox’s primary features is it’s routing and caching strategy modules. It allows you to listen for requests from your web page and determine if and how that request should be cached and responded to.
 
