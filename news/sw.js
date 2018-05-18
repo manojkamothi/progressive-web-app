@@ -15,6 +15,8 @@ self.addEventListener('fetch', event => {
 	const req = event.request;
 	const url = new URL(req.url);
 
+	console.log('origin: '+url.origin);	
+	console.log('location: '+location.origin);	
 	if(url.origin === location.origin) {
 		event.respondWith(cacheFirst(req));
 	} else {
@@ -28,7 +30,7 @@ async function cacheFirst(req) {
 }
 
 async function networkFirst(req) {
-	alert(networkFirst);
+	console.log(networkFirst);
 	const cache = await caches.open('news-dynamic');
 
 	try {
