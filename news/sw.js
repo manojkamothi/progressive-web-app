@@ -28,6 +28,7 @@ async function cacheFirst(req) {
 }
 
 async function networkFirst(req) {
+	alert(networkFirst);
 	const cache = await caches.open('news-dynamic');
 
 	try {
